@@ -29,4 +29,22 @@ export default class ApiService {
     /***USERS */
 
 
+/*  This is  to get the user profile */
+static async getAllUsers() {
+    const response = await axios.get(`${this.BASE_URL}/users/all`, {
+        headers: this.getHeader()
+    })
+    return response.data
 }
+
+static async getUserProfile() {
+    const response = await axios.get(`${this.BASE_URL}/users/get-logged-in-profile-info`, {
+        headers: this.getHeader()
+    })
+    return response.data
+}
+
+
+
+}
+// export default new ApiService();
