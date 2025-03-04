@@ -43,6 +43,14 @@ static async getUserProfile() {
     })
     return response.data
 }
+/* This is the  to get a single user */
+static async getUser(userId) {
+    const response = await axios.get(`${this.BASE_URL}/users/get-by-id/${userId}`, {
+        headers: this.getHeader()
+    })
+    return response.data
+}
+
 
 
 
