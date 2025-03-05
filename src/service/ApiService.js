@@ -52,6 +52,14 @@ static async getUser(userId) {
 }
 
 
+/* This is the  to get user bookings by the user id */
+static async getUserBookings(userId) {
+    const response = await axios.get(`${this.BASE_URL}/users/get-user-bookings/${userId}`, {
+        headers: this.getHeader()
+    })
+    return response.data
+}
+
 
 
 }
