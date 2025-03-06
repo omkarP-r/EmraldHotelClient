@@ -69,6 +69,18 @@ static async deleteUser(userId) {
 }
 
 
+/**ROOM */
+/* This  adds a new room room to the database */
+static async addRoom(formData) {
+    const result = await axios.post(`${this.BASE_URL}/rooms/add`, formData, {
+        headers: {
+            ...this.getHeader(),
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+    return result.data;
+}
+
 
 
 }
