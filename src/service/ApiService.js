@@ -80,6 +80,13 @@ static async addRoom(formData) {
     });
     return result.data;
 }
+/* This  gets all availavle rooms */
+static async getAllAvailableRooms() {
+    const result = await axios.get(`${this.BASE_URL}/rooms/all-available-rooms`)
+    return result.data
+}
+
+
 
 
 
