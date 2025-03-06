@@ -60,6 +60,15 @@ static async getUserBookings(userId) {
     return response.data
 }
 
+/* This is to delete a user */
+static async deleteUser(userId) {
+    const response = await axios.delete(`${this.BASE_URL}/users/delete/${userId}`, {
+        headers: this.getHeader()
+    })
+    return response.data
+}
+
+
 
 
 }
