@@ -100,7 +100,11 @@ static async getRoomTypes() {
     const response = await axios.get(`${this.BASE_URL}/rooms/types`)
     return response.data
 }
-
+/* This  gets all rooms from the database */
+static async getAllRooms() {
+    const result = await axios.get(`${this.BASE_URL}/rooms/all`)
+    return result.data
+}
 
 }
 // export default new ApiService();
