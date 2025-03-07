@@ -95,6 +95,11 @@ static async getAvailableRoomsByDateAndType(checkInDate, checkOutDate, roomType)
     return result.data
 }
 
+/* This  gets all room types from thee database */
+static async getRoomTypes() {
+    const response = await axios.get(`${this.BASE_URL}/rooms/types`)
+    return response.data
+}
 
 
 }
