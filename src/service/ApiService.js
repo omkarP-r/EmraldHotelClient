@@ -106,5 +106,14 @@ static async getAllRooms() {
     return result.data
 }
 
+/* This funcction gets a room by the id */
+static async getRoomById(roomId) {
+    const result = await axios.get(`${this.BASE_URL}/rooms/room-by-id/${roomId}`)
+    return result.data
+}
+
+
+
+
 }
 // export default new ApiService();
