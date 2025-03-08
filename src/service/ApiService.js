@@ -112,6 +112,15 @@ static async getRoomById(roomId) {
     return result.data
 }
 
+/* This  deletes a room by the Id */
+static async deleteRoom(roomId) {
+    const result = await axios.delete(`${this.BASE_URL}/rooms/delete/${roomId}`, {
+        headers: this.getHeader()
+    })
+    return result.data
+}
+
+
 
 
 
