@@ -130,7 +130,17 @@ static async updateRoom(roomId, formData) {
     });
     return result.data;
 }
+/**BOOKING */
+/* This  saves a new booking to the databse */
+static async bookRoom(roomId, userId, booking) {
 
+    console.log("USER ID IS: " + userId)
+
+    const response = await axios.post(`${this.BASE_URL}/bookings/book-room/${roomId}/${userId}`, booking, {
+        headers: this.getHeader()
+    })
+    return response.data
+}
 
 
 
