@@ -150,6 +150,14 @@ static async getAllBookings() {
     return result.data
 }
 
+/* This  get booking by the cnfirmation code */
+static async getBookingByConfirmationCode(bookingCode) {
+    const result = await axios.get(`${this.BASE_URL}/bookings/get-by-confirmation-code/${bookingCode}`)
+    return result.data
+}
+
+
+
 
 
 
