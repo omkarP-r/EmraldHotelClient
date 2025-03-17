@@ -142,7 +142,13 @@ static async bookRoom(roomId, userId, booking) {
     return response.data
 }
 
-
+/* This  gets alll bokings from the database */
+static async getAllBookings() {
+    const result = await axios.get(`${this.BASE_URL}/bookings/all`, {
+        headers: this.getHeader()
+    })
+    return result.data
+}
 
 
 
