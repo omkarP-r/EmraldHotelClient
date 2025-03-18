@@ -180,6 +180,10 @@ static isAdmin() {
 }
 
 
+static isUser() {
+    const role = localStorage.getItem('role')
+    return role === 'USER'
+}
 
 
 
