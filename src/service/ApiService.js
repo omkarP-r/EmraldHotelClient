@@ -170,6 +170,11 @@ static logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('role')
 }
+static isAuthenticated() {
+    const token = localStorage.getItem('token')
+    return !!token
+}
+
 
 
 
