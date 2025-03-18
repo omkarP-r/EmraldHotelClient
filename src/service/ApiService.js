@@ -165,6 +165,12 @@ static async cancelBooking(bookingId) {
 }
 
 
+/**AUTHENTICATION CHECKER */
+static logout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('role')
+}
+
 
 
 
