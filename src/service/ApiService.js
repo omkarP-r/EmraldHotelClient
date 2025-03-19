@@ -184,6 +184,9 @@ static isUser() {
     const role = localStorage.getItem('role')
     return role === 'USER'
 }
+static isUserOrAdmin() {
+    const role = localStorage.getItem('role')
+    return role === 'USER' || role === 'ADMIN'}
 
 
 
