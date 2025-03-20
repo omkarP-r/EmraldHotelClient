@@ -54,7 +54,21 @@ const HomePage = () => {
                         <p className="service-description">Enjoy a convenient selection of beverages and snacks stocked in your room's mini bar with no additional cost.</p>
                     </div>
                 </div>
-                
+                <div className="service-card">
+                    <img src="./assets/images/parking.png" alt="Parking" />
+                    <div className="service-details">
+                        <h3 className="service-title">Parking</h3>
+                        <p className="service-description">We offer on-site parking for your convenience . Please inquire about valet parking options if available.</p>
+                    </div>
+                </div>
+                <div className="service-card">
+                    <img src="./assets/images/wifi.png" alt="WiFi" />
+                    <div className="service-details">
+                        <h3 className="service-title">WiFi</h3>
+                        <p className="service-description">Stay connected throughout your stay with complimentary high-speed Wi-Fi access available in all guest rooms and public areas.</p>
+                    </div>
+                </div>
+  
             </section>
             {/* AVAILABLE ROOMS SECTION */}
             <section>
