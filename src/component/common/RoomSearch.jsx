@@ -22,6 +22,12 @@ const RoomSearch = ({ handleSearchResult }) => {
     fetchRoomTypes();
   }, []);
 
-  
+  /**This methods is going to be used to show errors */
+  const showError = (message, timeout = 5000) => {
+    setError(message);
+    setTimeout(() => {
+      setError('');
+    }, timeout);
+  };
 
-export default RoomSearch;
+  
