@@ -30,4 +30,14 @@ const RoomSearch = ({ handleSearchResult }) => {
     }, timeout);
   };
 
+  /**THis is going to be used to fetch avaailabe rooms from database base on seach data that'll be passed in */
+  const handleInternalSearch = async () => {
+    if (!startDate || !endDate || !roomType) {
+      showError('Please select all fields');
+      return false;
+    }
+   
+
   
+
+export default RoomSearch;
