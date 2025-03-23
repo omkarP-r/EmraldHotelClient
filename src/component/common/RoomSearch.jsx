@@ -36,7 +36,29 @@ const RoomSearch = ({ handleSearchResult }) => {
       showError('Please select all fields');
       return false;
     }
-   
+    try {
+      // Convert startDate to the desired format
+      const formattedStartDate = startDate ? startDate.toISOString().split('T')[0] : null;
+      const formattedEndDate = endDate ? endDate.toISOString().split('T')[0] : null;
+      // Call the API to fetch available rooms
+      const response = await ApiService.getAvailableRoomsByDateAndType(formattedStartDate, formattedEndDate, roomType);
+
+      // Check if the response is successful
+      if (response.statusCode === 200) {
+        if (response.roomList.length === 0) {
+          showError('Room not currently available for this date range on the selected room type.');
+          return
+        }
+        handleSearchResult(response.roomList);
+        setError('');
+      }
+    } catch (error) {
+      showError("Unknown error occured: " + error.response.data.message);
+    }
+  };
+
+ 
+};
 
   
 
