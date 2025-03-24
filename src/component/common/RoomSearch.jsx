@@ -69,7 +69,18 @@ const RoomSearch = ({ handleSearchResult }) => {
             placeholderText="Select Check-in Date"
           />
         </div>
-     
+        <div className="search-field">
+          <label>Check-out Date</label>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Select Check-out Date"
+          />
+        </div>
+
+        
+  );
 };
 
   
