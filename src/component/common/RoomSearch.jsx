@@ -78,7 +78,20 @@ const RoomSearch = ({ handleSearchResult }) => {
             placeholderText="Select Check-out Date"
           />
         </div>
-
+        <div className="search-field">
+          <label>Room Type</label>
+          <select value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+            <option disabled value="">
+              Select Room Type
+            </option>
+            {roomTypes.map((roomType) => (
+              <option key={roomType} value={roomType}>
+                {roomType}
+              </option>
+            ))}
+          </select>
+        
+    </section>
         
   );
 };
