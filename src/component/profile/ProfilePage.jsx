@@ -23,6 +23,15 @@ const ProfilePage = () => {
         fetchUserProfile();
     }, []);
 
+    const handleLogout = () => {
+        ApiService.logout();
+        navigate('/home');
+    };
+
+    const handleEditProfile = () => {
+        navigate('/edit-profile');
+    };
+
     
 };
 
