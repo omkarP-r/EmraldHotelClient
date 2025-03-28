@@ -46,7 +46,26 @@ const ProfilePage = () => {
                     <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
                 </div>
             )}
-            
+            <div className="bookings-section">
+                <h3>My Booking History</h3>
+                <div className="booking-list">
+                    {user && user.bookings.length > 0 ? (
+                        user.bookings.map((booking) => (
+                            <div key={booking.id} className="booking-item">
+                                <p><strong>Booking Code:</strong> {booking.bookingConfirmationCode}</p>
+                                <p><strong>Check-in Date:</strong> {booking.checkInDate}</p>
+                                <p><strong>Check-out Date:</strong> {booking.checkOutDate}</p>
+                                <p><strong>Total Guests:</strong> {booking.totalNumOfGuest}</p>
+                                <p><strong>Room Type:</strong> {booking.room.roomType}</p>
+                                <img src={booking.room.roomPhotoUrl} alt="Room" className="room-photo" />
+                            </div>
+                        ))
+                    ) : (
+                        <p>No bookings found.</p>
+                    )}
+                </div>
+            </div>
+        </div>
     );  
     
 };
