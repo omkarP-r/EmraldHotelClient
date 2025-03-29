@@ -37,7 +37,12 @@ const EditProfilePage = () => {
             <h2>Edit Profile</h2>
             {error && <p className="error-message">{error}</p>}
             {user && (
-                
+                <div className="profile-details">
+                <p><strong>Name:</strong> {user.name}</p>
+                <p><strong>Email:</strong> {user.email}</p>
+                <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
+                <button className="delete-profile-button" onClick={handleDeleteProfile}>Delete Profile</button>
+            </div>
             )}
         </div>
     );
