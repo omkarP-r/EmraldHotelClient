@@ -32,7 +32,15 @@ const EditProfilePage = () => {
         }
     };
 
-    
+    return (
+        <div className="edit-profile-page">
+            <h2>Edit Profile</h2>
+            {error && <p className="error-message">{error}</p>}
+            {user && (
+                
+            )}
+        </div>
+    );
 };
 
 export default EditProfilePage;
