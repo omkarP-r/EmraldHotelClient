@@ -9,4 +9,6 @@ const RoomDetailsPage = () => {
   const { roomId } = useParams(); // Get room ID from URL parameters
   const [roomDetails, setRoomDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // Track loading state
+  const [error, setError] = useState(null); // Track any errors
+  const [checkInDate, setCheckInDate] = useState(null); // State variable for check-in date
   
