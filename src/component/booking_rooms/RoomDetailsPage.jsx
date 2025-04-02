@@ -16,4 +16,10 @@ const RoomDetailsPage = () => {
   const [numChildren, setNumChildren] = useState(0); // State variable for number of children
   const [totalPrice, setTotalPrice] = useState(0); // State variable for total booking price
   const [totalGuests, setTotalGuests] = useState(1); // State variable for total number of guests
+  const [showDatePicker, setShowDatePicker] = useState(false); // State variable to control date picker visibility
+  const [userId, setUserId] = useState(''); // Set user id
+  const [showMessage, setShowMessage] = useState(false); // State variable to control message visibility
+  const [confirmationCode, setConfirmationCode] = useState(''); // State variable for booking confirmation code
+  const [errorMessage, setErrorMessage] = useState(''); // State variable for error message
+
   
