@@ -14,4 +14,6 @@ const RoomDetailsPage = () => {
   const [checkOutDate, setCheckOutDate] = useState(null); // State variable for check-out date
   const [numAdults, setNumAdults] = useState(1); // State variable for number of adults
   const [numChildren, setNumChildren] = useState(0); // State variable for number of children
+  const [totalPrice, setTotalPrice] = useState(0); // State variable for total booking price
+  const [totalGuests, setTotalGuests] = useState(1); // State variable for total number of guests
   
