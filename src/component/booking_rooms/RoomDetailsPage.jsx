@@ -11,4 +11,7 @@ const RoomDetailsPage = () => {
   const [isLoading, setIsLoading] = useState(true); // Track loading state
   const [error, setError] = useState(null); // Track any errors
   const [checkInDate, setCheckInDate] = useState(null); // State variable for check-in date
+  const [checkOutDate, setCheckOutDate] = useState(null); // State variable for check-out date
+  const [numAdults, setNumAdults] = useState(1); // State variable for number of adults
+  const [numChildren, setNumChildren] = useState(0); // State variable for number of children
   
