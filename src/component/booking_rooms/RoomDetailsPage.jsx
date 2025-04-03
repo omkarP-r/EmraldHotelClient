@@ -39,5 +39,12 @@ const RoomDetailsPage = () => {
     fetchData();
   }, [roomId]); // Re-run effect when roomId changes
 
+  const handleConfirmBooking = async () => {
+    // Check if check-in and check-out dates are selected
+    if (!checkInDate || !checkOutDate) {
+      setErrorMessage('Please select check-in and check-out dates.');
+      setTimeout(() => setErrorMessage(''), 5000); // Clear error message after 5 seconds
+      return;
+    }
 
-  
+    
