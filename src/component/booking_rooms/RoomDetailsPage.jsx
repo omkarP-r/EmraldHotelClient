@@ -47,4 +47,11 @@ const RoomDetailsPage = () => {
       return;
     }
 
+    // Check if number of adults and children are valid
+    if (isNaN(numAdults) || numAdults < 1 || isNaN(numChildren) || numChildren < 0) {
+      setErrorMessage('Please enter valid numbers for adults and children.');
+      setTimeout(() => setErrorMessage(''), 5000); // Clear error message after 5 seconds
+      return;
+    }
+
     
