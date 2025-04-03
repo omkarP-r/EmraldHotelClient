@@ -22,4 +22,22 @@ const RoomDetailsPage = () => {
   const [confirmationCode, setConfirmationCode] = useState(''); // State variable for booking confirmation code
   const [errorMessage, setErrorMessage] = useState(''); // State variable for error message
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true); // Set loading state to true
+        const response = await ApiService.getRoomById(roomId);
+        setRoomDetails(response.room);
+        const userProfile = await ApiService.getUserProfile();
+        setUserId(userProfile.user.id);
+      } catch (error) {
+        setError(error.response?.data?.message || error.message);
+      } finally {
+        setIsLoading(false); // Set loading state to false after fetching or error
+      }
+    };
+    fetchData();
+  }, [roomId]); // Re-run effect when roomId changes
+
+
   
