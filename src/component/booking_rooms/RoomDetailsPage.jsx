@@ -54,4 +54,10 @@ const RoomDetailsPage = () => {
       return;
     }
 
+    // Calculate total number of days
+    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+    const startDate = new Date(checkInDate);
+    const endDate = new Date(checkOutDate);
+    const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay)) + 1;
+
     
