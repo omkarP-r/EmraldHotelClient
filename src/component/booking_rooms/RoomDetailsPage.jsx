@@ -71,4 +71,20 @@ const RoomDetailsPage = () => {
     setTotalGuests(totalGuests);
   };
 
-  
+  const acceptBooking = async () => {
+    try {
+
+      // Ensure checkInDate and checkOutDate are Date objects
+      const startDate = new Date(checkInDate);
+      const endDate = new Date(checkOutDate);
+
+      // Log the original dates for debugging
+      console.log("Original Check-in Date:", startDate);
+      console.log("Original Check-out Date:", endDate);
+
+      // Convert dates to YYYY-MM-DD format, adjusting for time zone differences
+      const formattedCheckInDate = new Date(startDate.getTime() - (startDate.getTimezoneOffset() * 60000)).toISOString().split('T')[0];
+      const formattedCheckOutDate = new Date(endDate.getTime() - (endDate.getTimezoneOffset() * 60000)).toISOString().split('T')[0];
+
+
+      
