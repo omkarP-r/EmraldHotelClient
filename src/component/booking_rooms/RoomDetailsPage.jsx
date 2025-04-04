@@ -60,4 +60,15 @@ const RoomDetailsPage = () => {
     const endDate = new Date(checkOutDate);
     const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay)) + 1;
 
-    
+    // Calculate total number of guests
+    const totalGuests = numAdults + numChildren;
+
+    // Calculate total price
+    const roomPricePerNight = roomDetails.roomPrice;
+    const totalPrice = roomPricePerNight * totalDays;
+
+    setTotalPrice(totalPrice);
+    setTotalGuests(totalGuests);
+  };
+
+  
