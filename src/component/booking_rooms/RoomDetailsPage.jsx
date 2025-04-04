@@ -86,5 +86,17 @@ const RoomDetailsPage = () => {
       const formattedCheckInDate = new Date(startDate.getTime() - (startDate.getTimezoneOffset() * 60000)).toISOString().split('T')[0];
       const formattedCheckOutDate = new Date(endDate.getTime() - (endDate.getTimezoneOffset() * 60000)).toISOString().split('T')[0];
 
+// Log the original dates for debugging
+console.log("Formated Check-in Date:", formattedCheckInDate);
+console.log("Formated Check-out Date:", formattedCheckOutDate);
 
-      
+// Create booking object
+const booking = {
+  checkInDate: formattedCheckInDate,
+  checkOutDate: formattedCheckOutDate,
+  numOfAdults: numAdults,
+  numOfChildren: numChildren
+};
+console.log(booking)
+console.log(checkOutDate)
+
