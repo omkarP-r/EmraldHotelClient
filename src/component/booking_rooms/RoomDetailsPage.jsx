@@ -110,3 +110,10 @@ if (response.statusCode === 200) {
     navigate('/rooms'); // Navigate to rooms
   }, 10000);
 }
+} catch (error) {
+  setErrorMessage(error.response?.data?.message || error.message);
+  setTimeout(() => setErrorMessage(''), 5000); // Clear error message after 5 seconds
+  }
+  };
+  
+  
