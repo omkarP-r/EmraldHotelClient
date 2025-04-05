@@ -99,4 +99,14 @@ const booking = {
 };
 console.log(booking)
 console.log(checkOutDate)
-
+// Make booking
+const response = await ApiService.bookRoom(roomId, userId, booking);
+if (response.statusCode === 200) {
+  setConfirmationCode(response.bookingConfirmationCode); // Set booking confirmation code
+  setShowMessage(true); // Show message
+  // Hide message and navigate to homepage after 5 seconds
+  setTimeout(() => {
+    setShowMessage(false);
+    navigate('/rooms'); // Navigate to rooms
+  }, 10000);
+}
