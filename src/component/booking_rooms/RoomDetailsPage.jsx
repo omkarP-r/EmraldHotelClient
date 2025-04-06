@@ -142,3 +142,26 @@ if (response.statusCode === 200) {
           {errorMessage}
         </p>
       )}
+      <h2>Room Details</h2>
+      <br />
+      <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
+      <div className="room-details-info">
+        <h3>{roomType}</h3>
+        <p>Price: ${roomPrice} / night</p>
+        <p>{description}</p>
+      </div>
+      {bookings && bookings.length > 0 && (
+        <div>
+          <h3>Existing Booking Details</h3>
+          <ul className="booking-list">
+            {bookings.map((booking, index) => (
+              <li key={booking.id} className="booking-item">
+                <span className="booking-number">Booking {index + 1} </span>
+                <span className="booking-text">Check-in: {booking.checkInDate} </span>
+                <span className="booking-text">Out: {booking.checkOutDate}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
