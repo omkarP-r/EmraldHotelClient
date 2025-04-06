@@ -130,4 +130,15 @@ if (response.statusCode === 200) {
     
     const { roomType, roomPrice, roomPhotoUrl, description, bookings } = roomDetails;
     
-    
+    return (
+      <div className="room-details-booking">
+      {showMessage && (
+        <p className="booking-success-message">
+          Booking successful! Confirmation code: {confirmationCode}. An SMS and email of your booking details have been sent to you.
+        </p>
+      )}
+      {errorMessage && (
+        <p className="error-message">
+          {errorMessage}
+        </p>
+      )}
