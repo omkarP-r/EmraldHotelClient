@@ -180,4 +180,17 @@ if (response.statusCode === 200) {
               dateFormat="dd/MM/yyyy"
               // dateFormat="yyyy-MM-dd"
             />
-            
+            <DatePicker
+              className="detail-search-field"
+              selected={checkOutDate}
+              onChange={(date) => setCheckOutDate(date)}
+              selectsEnd
+              startDate={checkInDate}
+              endDate={checkOutDate}
+              minDate={checkInDate}
+              placeholderText="Check-out Date"
+              // dateFormat="yyyy-MM-dd"
+              dateFormat="dd/MM/yyyy"
+            />
+      
+           
