@@ -164,4 +164,20 @@ if (response.statusCode === 200) {
           </ul>
         </div>
       )}
-      
+      <div className="booking-info">
+        <button className="book-now-button" onClick={() => setShowDatePicker(true)}>Book Now</button>
+        <button className="go-back-button" onClick={() => setShowDatePicker(false)}>Go Back</button>
+        {showDatePicker && (
+          <div className="date-picker-container">
+            <DatePicker
+              className="detail-search-field"
+              selected={checkInDate}
+              onChange={(date) => setCheckInDate(date)}
+              selectsStart
+              startDate={checkInDate}
+              endDate={checkOutDate}
+              placeholderText="Check-in Date"
+              dateFormat="dd/MM/yyyy"
+              // dateFormat="yyyy-MM-dd"
+            />
+            
