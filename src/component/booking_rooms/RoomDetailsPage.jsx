@@ -193,4 +193,42 @@ if (response.statusCode === 200) {
               dateFormat="dd/MM/yyyy"
             />
       
-           
+      <div className='guest-container'>
+              <div className="guest-div">
+                <label>Adults:</label>
+                <input
+                  type="number"
+                  min="1"
+                  value={numAdults}
+                  onChange={(e) => setNumAdults(parseInt(e.target.value))}
+                />
+              </div>
+              <div className="guest-div">
+                <label>Children:</label>
+                <input
+                  type="number"
+                  min="0"
+                  value={numChildren}
+                  onChange={(e) => setNumChildren(parseInt(e.target.value))}
+                />
+              </div>
+              <button className="confirm-booking" onClick={handleConfirmBooking}>Confirm Booking</button>
+            </div>
+          </div>
+        )}
+        {totalPrice > 0 && (
+          <div className="total-price">
+            <p>Total Price: ${totalPrice}</p>
+            <p>Total Guests: {totalGuests}</p>
+            <button onClick={acceptBooking} className="accept-booking">Accept Booking</button>
+          </div>
+        )}
+      </div>
+      </div>
+      );
+      };
+      
+      export default RoomDetailsPage;   
+      
+            
+       
