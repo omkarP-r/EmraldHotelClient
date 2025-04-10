@@ -14,4 +14,23 @@ const AllRoomsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [roomsPerPage] = useState(5);
 
-  
+  // Function to handle search results
+  const handleSearchResult = (results) => {
+    setRooms(results);
+    setFilteredRooms(results);
+  };
+
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await ApiService.getAllRooms();
+        const allRooms = response.roomList;
+        setRooms(allRooms);
+        setFilteredRooms(allRooms);
+      } catch (error) {
+        console.error('Error fetching rooms:', error.message);
+      }
+    };
+
+   
