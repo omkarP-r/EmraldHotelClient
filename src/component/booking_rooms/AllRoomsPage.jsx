@@ -33,4 +33,17 @@ const AllRoomsPage = () => {
       }
     };
 
-   
+    const fetchRoomTypes = async () => {
+      try {
+        const types = await ApiService.getRoomTypes();
+        setRoomTypes(types);
+      } catch (error) {
+        console.error('Error fetching room types:', error.message);
+      }
+    };
+
+    fetchRooms();
+    fetchRoomTypes();
+  }, []);
+
+  
