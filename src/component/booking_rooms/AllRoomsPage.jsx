@@ -46,4 +46,24 @@ const AllRoomsPage = () => {
     fetchRoomTypes();
   }, []);
 
+  const handleRoomTypeChange = (e) => {
+    setSelectedRoomType(e.target.value);
+    filterRooms(e.target.value);
+  };
+
+  const filterRooms = (type) => {
+    if (type === '') {
+      setFilteredRooms(rooms);
+    } else {
+      const filtered = rooms.filter((room) => room.roomType === type);
+      setFilteredRooms(filtered);
+    }
+    setCurrentPage(1); // Reset to first page after filtering
+  };
+
+  // Pagination
+  const indexOfLastRoom = currentPage * roomsPerPage;
+  const indexOfFirstRoom = indexOfLastRoom - roomsPerPage;
+  const currentRooms = filteredRooms.slice(indexOfFirstRoom, indexOfLastRoom);
+
   
