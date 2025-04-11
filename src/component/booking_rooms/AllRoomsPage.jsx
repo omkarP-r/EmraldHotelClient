@@ -66,4 +66,35 @@ const AllRoomsPage = () => {
   const indexOfFirstRoom = indexOfLastRoom - roomsPerPage;
   const currentRooms = filteredRooms.slice(indexOfFirstRoom, indexOfLastRoom);
 
-  
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <div className='all-rooms'>
+      <h2>All Rooms</h2>
+      <div className='all-room-filter-div'>
+        <label>Filter by Room Type:</label>
+        <select value={selectedRoomType} onChange={handleRoomTypeChange}>
+          <option value="">All</option>
+          {roomTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </div>
+      
+      <RoomSearch handleSearchResult={handleSearchResult} />
+      <RoomResult roomSearchResults={currentRooms} />
+
+      <Pagination
+        roomsPerPage={roomsPerPage}
+        totalRooms={filteredRooms.length}
+        currentPage={currentPage}
+        paginate={paginate}
+      />
+    </div>
+  );
+};
+
+export default AllRoomsPage;
