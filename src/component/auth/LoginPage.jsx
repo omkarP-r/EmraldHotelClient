@@ -34,4 +34,17 @@ function LoginPage() {
         }
     };
 
-    
+    return (
+        <div className="auth-container">
+            <h2>Login</h2>
+            {error && <p className="error-message">{error}</p>}
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label>Email: </label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                
