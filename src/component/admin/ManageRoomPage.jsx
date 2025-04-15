@@ -52,4 +52,12 @@ const ManageRoomPage = () => {
     setCurrentPage(1); // Reset to first page after filtering
   };
 
+  // Pagination
+  const indexOfLastRoom = currentPage * roomsPerPage;
+  const indexOfFirstRoom = indexOfLastRoom - roomsPerPage;
+  const currentRooms = filteredRooms.slice(indexOfFirstRoom, indexOfLastRoom);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   
