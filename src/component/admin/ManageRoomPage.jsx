@@ -13,4 +13,16 @@ const ManageRoomPage = () => {
   const [roomsPerPage] = useState(5);
   const navigate = useNavigate();
 
-  
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await ApiService.getAllRooms();
+        const allRooms = response.roomList;
+        setRooms(allRooms);
+        setFilteredRooms(allRooms);
+      } catch (error) {
+        console.error('Error fetching rooms:', error.message);
+      }
+    };
+
+   
