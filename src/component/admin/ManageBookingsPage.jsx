@@ -11,4 +11,19 @@ const ManageBookingsPage = () => {
     const [bookingsPerPage] = useState(6);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const fetchBookings = async () => {
+            try {
+                const response = await ApiService.getAllBookings();
+                const allBookings = response.bookingList;
+                setBookings(allBookings);
+                setFilteredBookings(allBookings);
+            } catch (error) {
+                console.error('Error fetching bookings:', error.message);
+            }
+        };
+
+        fetchBookings();
+    }, []);
+
     
