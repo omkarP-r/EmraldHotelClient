@@ -42,4 +42,14 @@ const ManageBookingsPage = () => {
         setCurrentPage(1);
     };
 
-   
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    const indexOfLastBooking = currentPage * bookingsPerPage;
+    const indexOfFirstBooking = indexOfLastBooking - bookingsPerPage;
+    const currentBookings = filteredBookings.slice(indexOfFirstBooking, indexOfLastBooking);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    
