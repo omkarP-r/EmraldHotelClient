@@ -52,4 +52,42 @@ const ManageBookingsPage = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    
+    return (
+        <div className='bookings-container'>
+            <h2>All Bookings</h2>
+            <div className='search-div'>
+                <label>Filter by Booking Number:</label>
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    placeholder="Enter booking number"
+                />
+            </div>
+
+            <div className="booking-results">
+                {currentBookings.map((booking) => (
+                    <div key={booking.id} className="booking-result-item">
+                        <p><strong>Booking Code:</strong> {booking.bookingConfirmationCode}</p>
+                        <p><strong>Check In Date:</strong> {booking.checkInDate}</p>
+                        <p><strong>Check out Date:</strong> {booking.checkOutDate}</p>
+                        <p><strong>Total Guests:</strong> {booking.totalNumOfGuest}</p>
+                        <button
+                            className="edit-room-button"
+                            onClick={() => navigate(`/admin/edit-booking/${booking.bookingConfirmationCode}`)}
+                        >Manage Booking</button>
+                    </div>
+                ))}
+            </div>
+
+            <Pagination
+                roomsPerPage={bookingsPerPage}
+                totalRooms={filteredBookings.length}
+                currentPage={currentPage}
+                paginate={paginate}
+            />
+        </div>
+    );
+};
+
+export default ManageBookingsPage 
