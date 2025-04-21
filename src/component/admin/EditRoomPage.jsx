@@ -98,5 +98,13 @@ const EditRoomPage = () => {
             }
         }
     };
-
-   
+    return (
+        <div className="edit-room-container">
+            <h2>Edit Room</h2>
+            {error && <p className="error-message">{error}</p>}
+            {success && <p className="success-message">{success}</p>}
+            <div className="edit-room-form">
+                <div className="form-group">
+                    {preview ? (
+                        <img src={preview} alt="Room Preview" className="room-photo-preview" />
+                    
