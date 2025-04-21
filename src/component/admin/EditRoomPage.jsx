@@ -64,4 +64,39 @@ const EditRoomPage = () => {
                 formData.append('photo', file);
             }
 
-            
+            const result = await ApiService.updateRoom(roomId, formData);
+            if (result.statusCode === 200) {
+                setSuccess('Room updated successfully.');
+                
+                setTimeout(() => {
+                    setSuccess('');
+                    navigate('/admin/manage-rooms');
+                }, 3000);
+            }
+            setTimeout(() => setSuccess(''), 5000);
+        } catch (error) {
+            setError(error.response?.data?.message || error.message);
+            setTimeout(() => setError(''), 5000);
+        }
+    };
+
+    const handleDelete = async () => {
+        if (window.confirm('Do you want to delete this room?')) {
+            try {
+                const result = await ApiService.deleteRoom(roomId);
+                if (result.statusCode === 200) {
+                    setSuccess('Room Deleted successfully.');
+                    
+                    setTimeout(() => {
+                        setSuccess('');
+                        navigate('/admin/manage-rooms');
+                    }, 3000);
+                }
+            } catch (error) {
+                setError(error.response?.data?.message || error.message);
+                setTimeout(() => setError(''), 5000);
+            }
+        }
+    };
+
+   
