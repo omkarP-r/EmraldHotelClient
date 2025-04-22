@@ -107,4 +107,15 @@ const EditRoomPage = () => {
                 <div className="form-group">
                     {preview ? (
                         <img src={preview} alt="Room Preview" className="room-photo-preview" />
-                    
+                    ) : (
+                        roomDetails.roomPhotoUrl && (
+                            <img src={roomDetails.roomPhotoUrl} alt="Room" className="room-photo" />
+                        )
+                    )}
+                    <input
+                        type="file"
+                        name="roomPhoto"
+                        onChange={handleFileChange}
+                    />
+                </div>
+               
