@@ -118,4 +118,13 @@ const EditRoomPage = () => {
                         onChange={handleFileChange}
                     />
                 </div>
-               
+                <div className="form-group">
+                    <label>Room Type</label>
+                    <input
+                        type="text"
+                        name="roomType"
+                        value={roomDetails.roomType}
+                        onChange={handleChange}
+                    />
+                </div>
+                
