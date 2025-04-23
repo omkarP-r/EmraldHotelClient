@@ -127,4 +127,29 @@ const EditRoomPage = () => {
                         onChange={handleChange}
                     />
                 </div>
-                
+                <div className="form-group">
+                    <label>Room Price</label>
+                    <input
+                        type="text"
+                        name="roomPrice"
+                        value={roomDetails.roomPrice}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Room Description</label>
+                    <textarea
+                        name="roomDescription"
+                        value={roomDetails.roomDescription}
+                        onChange={handleChange}
+                    ></textarea>
+                </div>
+                <button className="update-button" onClick={handleUpdate}>Update Room</button>
+                <button className="delete-button" onClick={handleDelete}>Delete Room</button>
+            </div>
+        </div>
+    );
+};
+
+export default EditRoomPage;
+   
