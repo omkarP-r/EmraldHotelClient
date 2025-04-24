@@ -11,4 +11,18 @@ const EditBookingPage = () => {
 
 
 
-   
+    useEffect(() => {
+        const fetchBookingDetails = async () => {
+            try {
+                const response = await ApiService.getBookingByConfirmationCode(bookingCode);
+                setBookingDetails(response.booking);
+            } catch (error) {
+                setError(error.message);
+            }
+        };
+
+        fetchBookingDetails();
+    }, [bookingCode]);
+
+
+    
