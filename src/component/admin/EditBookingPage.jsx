@@ -64,4 +64,31 @@ const EditBookingPage = () => {
                     <br />
                     <hr />
                     <br />
-                    
+                    <h3>Booker Detials</h3>
+                    <div>
+                        <p> Name: {bookingDetails.user.name}</p>
+                        <p> Email: {bookingDetails.user.email}</p>
+                        <p> Phone Number: {bookingDetails.user.phoneNumber}</p>
+                    </div>
+
+                    <br />
+                    <hr />
+                    <br />
+                    <h3>Room Details</h3>
+                    <div>
+                        <p> Room Type: {bookingDetails.room.roomType}</p>
+                        <p> Room Price: ${bookingDetails.room.roomPrice}</p>
+                        <p> Room Description: {bookingDetails.room.roomDescription}</p>
+                        <img src={bookingDetails.room.roomPhotoUrl} alt="" sizes="" srcSet="" />
+                    </div>
+                    <button
+                        className="acheive-booking"
+                        onClick={() => acheiveBooking(bookingDetails.id)}>Acheive Booking
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default EditBookingPage;
