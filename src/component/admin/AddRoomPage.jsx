@@ -11,4 +11,12 @@ const AddRoomPage = () => {
         roomPrice: '',
         roomDescription: '',
     });
-   
+    const [file, setFile] = useState(null);
+    const [preview, setPreview] = useState(null);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [roomTypes, setRoomTypes] = useState([]);
+    const [newRoomType, setNewRoomType] = useState(false);
+
+
+    
