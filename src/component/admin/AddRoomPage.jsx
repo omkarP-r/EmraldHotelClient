@@ -19,4 +19,18 @@ const AddRoomPage = () => {
     const [newRoomType, setNewRoomType] = useState(false);
 
 
+    useEffect(() => {
+        const fetchRoomTypes = async () => {
+            try {
+                const types = await ApiService.getRoomTypes();
+                setRoomTypes(types);
+            } catch (error) {
+                console.error('Error fetching room types:', error.message);
+            }
+        };
+        fetchRoomTypes();
+    }, []);
+
+
+
     
