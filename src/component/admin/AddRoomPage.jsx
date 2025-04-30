@@ -64,5 +64,15 @@ const AddRoomPage = () => {
         }
     };
 
+    const addRoom = async () => {
+        if (!roomDetails.roomType || !roomDetails.roomPrice || !roomDetails.roomDescription) {
+            setError('All room details must be provided.');
+            setTimeout(() => setError(''), 5000);
+            return;
+        }
 
-    
+        if (!window.confirm('Do you want to add this room?')) {
+            return
+        }
+
+       
